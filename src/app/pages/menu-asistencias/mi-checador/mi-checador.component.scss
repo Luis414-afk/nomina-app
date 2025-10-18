@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+.clock {
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente */
+  justify-content: center;
+  align-items: center;
+  height: 9vh; /* Ajusta el height como desees */
+  font-family: 'Roboto', sans-serif; /* Solo para el reloj */
+  font-size: 100px; /* Aumenta el tamaño de la fuente para los números */
+  font-weight: 900; /* Peso de fuente más grueso */
+  letter-spacing: 8px; /* Mayor espaciado entre letras */
+  
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra */
+  text-align: center; /* Centrar texto */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.date {
+  font-size: 18px; /* Tamaño más pequeño para la fecha */
+  font-weight: 400; /* Peso de fuente normal */
+  margin-top: -1px; /* Espacio entre los números y la fecha */
+  color: #666; /* Color más suave para la fecha */
+}
+
+
+.input_video {
+    width: 100%;  /* O el tamaño que desees */
+    height: 100%; /* O el tamaño que desees */
+    object-fit: cover; /* Asegura que el video se ajuste al contenedor */
+    display: none; /* Oculta el video */
+}
+
+.figura_cara {
+    position: absolute;
+    /*using box-shadow to create background*/
+    -webkit-box-shadow: 0 0 0 200px rgba(0,0,0,0.8);
+    box-shadow: 0 0 0 200px rgba(0,0,0,0.8);
+    /*change height and position as needed*/
+   
+    -moz-border-radius: 60% 60% 60% 60% / 60% 60% 60% 60%;
+    -webkit-border-radius: 60% 60% 60% 60% / 60% 60% 60% 60%;
+    border-radius: 60% 60% 60% 60% / 60% 60% 60% 60%;
+    width: 200px;
+    height: calc(73vh - 280px - 50px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }

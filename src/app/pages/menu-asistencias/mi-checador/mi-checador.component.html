@@ -1,0 +1,140 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Checador Digital</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+
+  <div class="checador-digital-screen">
+    
+ 
+      <div class="clock ion-margin-bottom">
+        <h1>{{ currentTime }}</h1>
+        <p class="date">{{ currentDate }}</p> <!-- Agrega la fecha aquí -->
+      </div>
+   
+    
+
+    <ion-item lines="none" class="item-content">
+      <ion-label class="lbl">Asistencia</ion-label>
+      <ion-select value="entrarTarde" placeholder="Seleccionar"  okText="Aceptar" cancelText="Cancelar">
+        <ion-select-option value="entrarTarde">Entrada</ion-select-option>
+        <ion-select-option value="salirEmergencia">Comida</ion-select-option>
+        <ion-select-option value="salirNormal">Salida</ion-select-option>
+        <ion-select-option value="faltar">Tiempo Extra</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+
+
+    
+    <ion-card mode="ios" class="profile-content">
+
+  
+      
+   
+
+      <div *ngIf="imageDataUrl === '';" #div_container [ngStyle]="{ 
+        'position': 'relative', 
+        'overflow': 'hidden', 
+        'width.px': WIDTH, 
+        'height.px': HEIGHT,
+        'background-image': !isCenterFace ? 'url(assets/images/facial-recognition-collage-concept.jpg)' : 'none',
+        'background-size': !isCenterFace ? 'cover' : 'none', 
+        'background-repeat': 'no-repeat',
+        'background-position': 'center'
+    }">
+
+    
+      <ng-container  *ngIf="showFiguraCara; ">
+        <video 
+        webkit-playsinline 
+        playsinline 
+        muted 
+        autoplay="true" 
+        class="input_video" 
+        #input_video 
+        controls 
+        style="display: none;">
+    </video>
+      </ng-container>
+        <canvas id="output_canvas" [width]="WIDTH" [height]="HEIGHT" #output_canvas></canvas>
+        
+        <div  *ngIf="showFiguraCara"  class="figura_cara" [ngStyle]="isCenterFace ? {'border': '4px solid #15ff15'} : {'border': '4px solid #ff1515'}"></div>
+      </div>
+      <ng-container  *ngIf="imageDataUrl != '';">
+        <img src="{{imageDataUrl}}" [width]="WIDTH" [height]="HEIGHT" alt="">
+      </ng-container>
+  
+  
+      <div class="cover-image-top">
+
+        <ng-container  *ngIf="geolocation || camara; ">
+          <br>
+          <ion-label class="email">EVENTO</ion-label>
+          <ion-label class="name">{{showEvento}}</ion-label>
+        </ng-container>
+
+        <ng-container  *ngIf="!geolocation || !camara; ">
+          <br>
+          <ion-label class="email">Para poder realizar su asistencia, debe habilitar los permisos a esta aplicación para poder acceder a la localización y cámara  </ion-label><br>
+      
+        </ng-container>
+
+     </div>
+
+    </ion-card>
+   
+   
+
+    <ng-container  *ngIf="!geolocation || !camara; ">
+     
+      <ion-button   fill="solid"  color="primary"  shape="round"  expand="block" id="popover-button"><ion-icon name="settings"></ion-icon> &nbsp; Habilitar Permisos</ion-button>
+      <ion-popover trigger="popover-button" [dismissOnSelect]="true" size="auto" alignment="center" side="bottom">
+          <ng-template>
+          <ion-content>
+              <ion-list>
+                  <ng-container  *ngIf="!geolocation"> <ion-item lines="full" [button]="true" [detail]="true" (click)="enablePermissionUbicacion()"><ion-icon name="location-sharp" ></ion-icon>&nbsp;  Habilitar</ion-item></ng-container>
+                  <ng-container  *ngIf="!camara"><ion-item lines="full" [button]="true" [detail]="true" (click)="enablePermissionCamara()"><ion-icon name="camera-sharp"></ion-icon> &nbsp; Habilitar</ion-item></ng-container>
+              </ion-list>
+          </ion-content>
+          </ng-template>
+      </ion-popover>
+  </ng-container>
+
+  <ng-container *ngIf="geolocation && camara; ">
+
+ 
+      <ion-button (click)="loadPropiedadesFACEID2()" fill="solid"  color="secondary"  shape="round"  expand="block" [disabled]="showFiguraCara"  >
+         
+
+          <ng-container *ngIf="showFiguraCara; ">
+            ESCANEANDO...
+          </ng-container>
+          <ng-container *ngIf="!showFiguraCara; ">
+            <ion-icon name="camera" ></ion-icon> 
+            &nbsp;
+            TOMAR ASISTENCIA
+          </ng-container>
+         
+      </ion-button>
+  
+
+  
+      
+
+     
+  </ng-container>
+
+  
+
+   
+  </div>
+</ion-content>
+

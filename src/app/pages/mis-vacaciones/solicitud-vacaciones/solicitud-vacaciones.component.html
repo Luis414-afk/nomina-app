@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Solicitar Vacaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding solicitud-screen">
+
+  
+  <!-- Fecha de creación -->
+  <ion-item lines="none" class="item-content">
+    <ion-icon slot="start" name="calendar-number-outline" color="primary"></ion-icon>
+    <ion-input type="text" [value]="fechaHoraActual" placeholder="Fecha de creación" readonly></ion-input>
+  </ion-item>
+
+  <!-- Fechas solicitadas -->
+  <ion-item lines="none" class="item-content" (click)="presentPopover()">
+    <ion-icon slot="start" name="calendar-outline" color="primary"></ion-icon>
+    <ion-label>
+      <h3 class="title">Fechas Elegidas</h3>
+      <p class="subtitle">{{ diasSeleccionados }}</p>
+    </ion-label>
+    <ion-icon slot="end" color="medium" name="open-outline"></ion-icon>
+  </ion-item>
+
+  <!-- Días solicitados -->
+  <ion-item lines="none" class="item-content">
+    <ion-icon slot="start" name="calculator-outline" color="primary"></ion-icon>
+    <ion-input type="text" [value]="totalDias + ' Dias'" placeholder="Total días solicitados" readonly></ion-input>
+  </ion-item>
+
+
+ 
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100" (click)="enviarSolicitud()">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Enviar Solicitud</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

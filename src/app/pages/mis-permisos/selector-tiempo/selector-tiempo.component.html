@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Hora</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón Confirmar -->
+      <ion-button fill="clear" (click)="confirm()">
+        <ion-icon name="checkmark-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+      <!-- Botón Cerrar -->
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="time-picker-container">
+    <h3 class="title">Elige una hora:</h3>
+    <ion-datetime
+      presentation="time"
+      displayFormat="h:mm A"
+      [(ngModel)]="selectedTime"
+      class="datetime">
+    </ion-datetime>
+  </div>
+</ion-content>

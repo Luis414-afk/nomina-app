@@ -1,0 +1,63 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-register-screen">
+    <!--<div class="logo-content">
+      <img src="assets/images/images/logo.png" alt="" class="img">
+    </div>-->
+
+    <div class="infinite-bg">
+      <div class="infinite-text">FacePass</div>
+    </div>
+
+    <ion-label class="title">Entrar a Mi Cuenta</ion-label>
+    <ion-label class="sub-title">Comienza a disfrutar tus beneficios de empleado</ion-label>
+
+    <div class="form-content">
+      <ion-item lines="none" class="item-content">
+        <ion-icon slot="start" name="mail-outline"></ion-icon>
+        <ion-input type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="item-content">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-input [type]="passwordView == false ? 'password' :'text' " placeholder="Password"></ion-input>
+        <ion-icon slot="end" [name]="passwordView == false ?'eye-outline' :'eye-off-outline'"
+          (click)="toggePassword()"></ion-icon>
+      </ion-item>
+
+      <div class="extra-contnet">
+        <ion-item lines="none" class="checkbox-content">
+          <ion-label class="lbl">Recordar </ion-label>
+          <ion-checkbox slot="start" mode="md"></ion-checkbox>
+        </ion-item>
+        <ion-label class="reset" (click)="onReset()">¿Olvidaste Password?</ion-label>
+      </div>
+
+      <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100" (click)="onLogin()">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-label class="lbl">Iniciar Sesion</ion-label>
+        <div class="btn">
+          <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+
+
+  
+  </div>
+
+
+  
+  
+</ion-content>

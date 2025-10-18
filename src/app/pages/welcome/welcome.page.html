@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios"></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="welcome-screen">
+    <swiper-container #swiper (slidechange)="slideChanged($event)">
+      <swiper-slide>
+        <div class="slide-content">
+          <ion-img src="assets/images/slider/1.png" alt="Intima Hogar Empleados" class="img"></ion-img>
+          <ion-label class="title">INTIMA HOGAR EMPLEADOS</ion-label>
+          <ion-label class="sub-title">Tu portal de empleado: la forma más sencilla de obtener todo lo que necesitas.</ion-label>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="slide-content">
+          <ion-img src="assets/images/slider/noticias.png" alt="Mantente al Día" class="img"></ion-img>
+          <ion-label class="title">MANTENTE AL DÍA</ion-label>
+          <ion-label class="sub-title">Recibe todas las noticias internas</ion-label>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="slide-content">
+          <ion-img src="assets/images/slider/credencial.png" alt="Credencial Digital" class="img"></ion-img>
+          <ion-label class="title">CREDENCIAL DIGITAL</ion-label>
+          <ion-label class="sub-title">Una solución moderna y ecológica que facilita el acceso a todos</ion-label>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+
+    <div class="bottom-content" *ngIf="show"  >
+      <div class="progress">
+        <div *ngFor="let item of items" [class]="item == index ? 'active' : 'deactive'"></div>
+      </div>
+      <div class="circle-btn ion-activatable ripple-parent" (click)="nextSlide()" *ngIf="isEnd">
+        <ion-icon name="arrow-forward-outline" color="light"></ion-icon>
+      </div>
+      <div class="next-btn ion-activatable ripple-parent" (click)="onAuth()" *ngIf="!isEnd" [style.width.%]="50">
+        <ion-label class="lbl">IR AL INICIO</ion-label>
+        <div class="btn">
+          <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="cargando" *ngIf="!show"  >
+      
+        <ion-label>Cargando...</ion-label>
+  
+    </div>
+
+  </div>
+</ion-content>

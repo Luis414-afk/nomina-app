@@ -1,0 +1,70 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+          <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+      </ion-buttons>
+        
+    <ion-title>Mis Permisos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content >
+
+  <div class="listado-general">
+    <div class="call-chat-card ion-activatable ripple-parent" *ngFor="let item of userList; let i = index;">
+      <ion-row class="call-chat-content">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-col size="2">
+          <div class="start-btn">
+         
+          <ion-icon class="mentor-cover-image" name="checkmark-circle-outline" *ngIf="item.estatus == 1" [color]="getBadgeColor(item.estatus)"></ion-icon>
+          <ion-icon class="mentor-cover-image" name="help-circle-outline" *ngIf="item.estatus == 2" [color]="getBadgeColor(item.estatus)"></ion-icon>
+          <ion-icon class="mentor-cover-image"  name="close-circle-outline"  *ngIf="item.estatus == 3" [color]="getBadgeColor(item.estatus)"></ion-icon>
+ 
+          
+          </div>
+        </ion-col>
+        <ion-col size="8">
+          <div class="name-content">
+            <ion-label class="name"> 
+              <b>{{  item.tipo  }}</b>
+              <br>
+              <ion-badge [color]="getBadgeColor(item.estatus)">
+                Estatus: {{ item.estatusName }}
+              </ion-badge>
+            </ion-label>
+            <div class="more-data">
+              <ion-icon name="timer-outline" [color]="getBadgeColor(item.estatus)"></ion-icon>
+              <ion-label class="lbl">{{ getHora(item.fechaCreacion) }}</ion-label>
+              <div class="line"></div>
+              <ion-icon name="calendar-outline" [color]="getBadgeColor(item.estatus)"></ion-icon>
+              <ion-label class="lbl">{{ getFecha(item.fechaCreacion) }}</ion-label>
+              
+              
+            </div>
+          </div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="end-btn">
+            <ion-icon name="eye-outline" color="primary" class="call-btn" (click)="openDetailPopover(item)"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100" (click)="onPage('/tabs/menu-general/mis-permisos/solicitar-permiso')">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Solicitar Permiso</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,16 @@
+
+.calendar-container {
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  ion-item {
+    --background: transparent;
+    --border-color: var(--ion-color-medium);
+  }
+
+  ion-calendar {
+    --padding-start: 0;
+    --padding-end: 0;
+    --background: transparent;
+  }

@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-title>Menu General</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="menu-general-screen ion-padding">
+
+  <div class="cards-grid">
+
+    <div class="card" (click)="onPage('/tabs/menu-general/menu-asistencias' )" >
+      <div class="card-icon biometric">👤</div>
+      <div class="card-title">Checador Asistencias</div>
+      <div class="card-sub">Checador digital, Historial de asistencia, Dashboard</div>
+    </div>
+
+    <div class="card" (click)="onPage('/tabs/menu-general/recibos-nomina' )">
+      <div class="card-icon receipt">📄</div>
+      <div class="card-title">Recibos de Nómina</div>
+      <div class="card-sub">Listado de recibos, Dashboard pagos</div>
+    </div>
+
+    <div class="card" (click)="onPage('/tabs/menu-general/calendario' )">
+      <div class="card-icon calendar">📅</div>
+      <div class="card-title">Calendario</div>
+      <div class="card-sub">Listado de eventos</div>
+    </div>
+
+    <div class="card" (click)="onPage('/tabs/menu-general/organigrama' )">
+      <div class="card-icon org-chart">👥</div>
+      <div class="card-title">Organigrama de Área</div>
+      <div class="card-sub">Ver estructura organizacional</div>
+    </div>
+    
+    <!-- 🏖️ NUEVO: Vacaciones -->
+    <div class="card" (click)="onPage('/tabs/menu-general/mis-vacaciones' )">
+      <div class="card-icon vacation">🏖️</div>
+      <div class="card-title">Vacaciones</div>
+      <div class="card-sub">Listado de vacaciones, Solicitar nuevo periodo</div>
+    </div>
+
+    <!-- 🕒 NUEVO: Permisos -->
+    <div class="card" (click)="onPage('/tabs/menu-general/mis-permisos' )">
+      <div class="card-icon permisos">🕒</div>
+      <div class="card-title">Permisos</div>
+      <div class="card-sub">Listado de permisos, Solicitar permiso</div>
+    </div> 
+
+  </div>
+
+</ion-content>

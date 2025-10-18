@@ -1,0 +1,39 @@
+ion-card.icon-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px; /* Altura ajustada para hacerla más cuadrada */
+    width: 100%; /* Ajusta la anchura según tus necesidades */
+ 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 10px; /* Bordes ligeramente redondeados */
+    overflow: hidden;
+    margin: 5px 0; /* Margen para separar las tarjetas */
+  }
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  ion-icon.icon {
+    color: var(--ion-color-primary);
+    font-size: 100px; /* Tamaño más grande para el ícono */
+    margin-bottom: 15px; /* Espacio entre el ícono y el texto */
+  }
+  
+  ion-label.event-name {
+    font-size: 16px; /* Tamaño del texto para el nombre del evento */
+    font-weight: bold; /* Negrita para el nombre del evento */
+    color: var(--ion-color-dark);
+  }
+  
+  ion-tabs {
+    --padding-top: -10px; // Ajusta el valor según sea necesario
+  }
+  

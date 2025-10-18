@@ -1,0 +1,33 @@
+ /* Estilo para ocupar casi toda la pantalla */
+ ion-content {
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+ion-header {
+  --background: var(--ion-color-primary);
+  --color: white;
+}
+
+ion-toolbar {
+  --border-radius: 0 0 16px 16px; /* Bordes redondeados en la parte inferior */
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--ion-color-dark);
+}
+
+p {
+  font-size: 16px;
+  color: var(--ion-color-medium);
+}
+
+ion-button {
+  --background: transparent;
+  --color: white;
+}

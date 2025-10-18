@@ -1,0 +1,40 @@
+/*
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+*/
+
+ion-header, ion-toolbar{
+  background-color: #fd6b0d !important;
+}
+
+.selected {
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-primary);
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fd6b0d !important;
+}
+
+.logo {
+  width: 80%;
+  height: auto; /* Ajusta el tamaño del logo según tus necesidades */
+}
+
+ion-button {
+  margin-left: auto;
+}
+
+ion-label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+}
+

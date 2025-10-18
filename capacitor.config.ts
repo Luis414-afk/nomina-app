@@ -1,0 +1,38 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+	"appId": "com.app.facepass",
+	"appName": "FacePass",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"server": {
+		"cleartext": true,
+		"allowNavigation": [
+			"http://*/*",
+			"https://*/*"
+		]
+	},
+	"plugins": {
+		"SplashScreen": {
+		  "launchShowDuration": 3000,
+		  "launchAutoHide": true,
+		  "backgroundColor": "#ffffffff",
+		  "androidSplashResourceName": "splash",
+		  "showSpinner": true,
+		  "androidSpinnerStyle": "large",
+		  "iosSpinnerStyle": "small",
+		  "spinnerColor": "#999999",
+		  "splashFullScreen": true,
+		  "splashImmersive": true,
+		  "layoutName": "launch_screen",
+		  "useDialog": true
+		},
+		"PushNotifications": {
+			"presentationOptions": ["badge", "sound", "alert"]
+		}
+	}
+	
+}
+
+
+export default config;

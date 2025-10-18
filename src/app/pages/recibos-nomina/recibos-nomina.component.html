@@ -1,0 +1,43 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recibos Nómina</ion-title>
+  </ion-toolbar>
+
+
+ 
+  <ion-toolbar mode="ios">
+    <ion-row class="online-course-segments">
+      <ion-col size="6">
+        <div
+          [class]="selected == 'historial' ? 'active-btn ion-activatable ripple-parent':'deactive-btn ion-activatable ripple-parent'"
+          (click)="changeSelected('historial')">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label class="lbl">Historial</ion-label>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div
+          [class]="selected == 'dashboard' ? 'active-btn ion-activatable ripple-parent':'deactive-btn ion-activatable ripple-parent'"
+          (click)="changeSelected('dashboard')">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label class="lbl">Dashboard</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ 
+
+  <ng-container *ngIf="selected === 'historial'">
+    <app-historial></app-historial>
+  </ng-container>
+
+  <ng-container *ngIf="selected === 'dashboard'">
+    <app-dashboard></app-dashboard>
+  </ng-container>
+</ion-content>

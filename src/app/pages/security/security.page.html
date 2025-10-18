@@ -1,0 +1,46 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-title>Seguridad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div class="notification-setting-screen">
+    <ion-item lines="none" class="item-content">
+      <ion-label class="lbl">Sesion Infinita</ion-label>
+      <ion-toggle slot="end" color="secondary" mode="md" [checked]="true"></ion-toggle>
+    </ion-item>
+    <ion-item lines="none" class="item-content">
+      <ion-label class="lbl">Recordar Credenciales</ion-label>
+      <ion-toggle slot="end" color="secondary" mode="md"></ion-toggle>
+    </ion-item>
+    <ion-item lines="none" class="item-content">
+      <ion-label class="lbl">Face ID para iniciar sesion</ion-label>
+      <ion-toggle slot="end" color="secondary" mode="md" [checked]="true"></ion-toggle>
+    </ion-item>
+    <ion-item lines="none" class="item-content">
+      <ion-label class="lbl">Bloqueo Cuenta Segundo Plano</ion-label>
+      <ion-toggle slot="end" color="secondary" mode="md"></ion-toggle>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Cambiar Configuracion</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

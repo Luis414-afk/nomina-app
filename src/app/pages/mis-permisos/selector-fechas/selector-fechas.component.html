@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Seleccionar Fechas</ion-title>
+    <ion-buttons slot="end">
+      <!-- Botón Aplicar -->
+      <ion-button fill="clear" (click)="confirmSelection()">
+        <ion-icon name="checkmark-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+      <!-- Botón Cerrar -->
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon name="close-circle" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Selector de modo: días específicos o rango -->
+
+
+  <!-- Calendario -->
+  <div class="calendar-container">
+   
+    <ion-calendar #calendar
+        [(ngModel)]="date"
+        [options]="currentOptions"
+        [type]="type"
+        (onChange)="onDateChange($event)"
+        [format]="'yyyy-MM-dd'">
+    </ion-calendar>
+  </div>
+</ion-content>

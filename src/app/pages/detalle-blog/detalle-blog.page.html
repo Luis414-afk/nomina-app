@@ -1,0 +1,93 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-content>
+  <div class="course-details-screen">
+    <div
+      class="course-detail-cover"
+      [ngStyle]="{'background-image': 'url('+image+')'}"
+    >
+      <div class="overlay">
+        <div class="back-btn" (click)="onBack()">
+          <ion-icon name="arrow-back-outline" color="light"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="course-content">
+      <div class="play-btn">
+        <ion-icon name="newspaper-outline" color="light"></ion-icon>
+      </div>
+      <ion-card mode="ios" class="top-card-content">
+        <div class="header">
+          <ion-label class="lbl">{{type}} </ion-label>
+        </div>
+        <ion-label class="name">
+          {{ (name.length>35)? (name | slice:0:35)+'..':(name) }}
+        </ion-label>
+
+        <div class="about-content" [innerHTML]="blogContent"></div>
+
+        <div
+          class="curriculcum-content"
+          *ngIf="selectedSegments == 'curriculcum'"
+        >
+          <div class="curriculcum-list">
+            <div
+              class="curriculcum-content-data"
+              *ngFor="let item of util.curriculcumList;"
+            >
+              <div class="prefix">
+                <div class="number">
+                  <ion-label class="time">
+                    {{item.number}}
+                  </ion-label>
+                </div>
+                <div class="name-content">
+                  <ion-label class="title">
+                    {{ (item.name.length>25)? (item.name | slice:0:25)+'..':(item.name) }}
+                  </ion-label>
+                  <ion-label class="total-time"> {{item.time}} </ion-label>
+                </div>
+              </div>
+              <ion-icon
+                name="play-circle"
+                color="primary"
+                class="play-btn-curriculcum"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+
+      <ion-card mode="ios" class="bottom-content">
+        <div class="main-top-title">
+          <ion-label class="title">Autor</ion-label>
+        </div>
+
+        <div class="mentor-info">
+          <div class="prefix">
+            <div
+              class="mentor-cover-image"
+              [ngStyle]="{'background-image': 'url(assets/images/avatar/2.jpg)'}"
+            ></div>
+            <div class="name-content">
+              <ion-label class="title-mentor">Jesus Olvera Camarillo</ion-label>
+              <ion-label class="type-mentor">
+                Desarrollador Netsuit/Mobil
+              </ion-label>
+            </div>
+          </div>
+          <ion-icon
+            name="albums-outline"
+            class="mentor-message"
+            color="dark"
+          ></ion-icon>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

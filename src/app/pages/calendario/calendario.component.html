@@ -1,0 +1,85 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Calendario</ion-title>
+
+    
+  </ion-toolbar>
+  <ion-toolbar mode="ios">
+
+    <ion-grid>
+      <ion-row >
+        <ion-col size="6" class="ion-text-center">
+          <ion-button size="small" expand="block" (click)="goToPreviousDate()">
+            <ion-icon slot="start" name="arrow-back"></ion-icon>
+            Regresar
+          </ion-button>
+        </ion-col>
+        <ion-col size="6" class="ion-text-center">
+          <ion-button size="small" expand="block" (click)="goToNextDate()">
+            Cambiar
+            <ion-icon slot="end"  name="arrow-forward"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-label>{{ viewTitle }}</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-buttons slot="end">
+            <ion-button [disabled]="isToday" (click)="today()">Hoy</ion-button>
+            <ion-button (click)="changeMode('month')">M</ion-button>
+            <ion-button (click)="changeMode('week')">S</ion-button>
+       
+      
+           
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Componente de Calendario -->
+  <div class="calendar-container" #calendarContainer>
+    <calendar
+   
+      [eventSource]="eventSource"
+      [queryMode]="calendar.queryMode"
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      [step]="calendar.step"
+      [preserveScrollPosition]="calendar.preserveScrollPosition"
+      [startHour]="calendar.startHour"
+      [scrollToHour]="calendar.scrollToHour"
+      [dayviewCategorySource]="calendar.dayviewCategorySource"
+      [dayviewShowCategoryView]="calendar.dayviewShowCategoryView"
+      (onCurrentDateChanged)="onCurrentDateChanged($event)"
+      (onEventSelected)="onEventSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      (onTimeSelected)="onTimeSelected($event)"
+      (onDayHeaderSelected)="onDayHeaderSelected($event)"
+
+    >
+    </calendar>
+  </div>
+
+  
+</ion-content>
+
+<ion-footer>
+ 
+</ion-footer>

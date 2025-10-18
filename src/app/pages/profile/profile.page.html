@@ -1,0 +1,83 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-title>Mi cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="user-profile-screen">
+    <ion-card mode="ios" class="profile-content">
+      <div class="cover-image-top">
+        <img class="user-cover-image"  alt="foto" (error)="onImageError($event)"  [src]="'assets/images/avatar/2.jpg'" />
+       
+        <ion-label class="name">Jesus Olvera Camarillo</ion-label>
+        <ion-label class="email">jesus_olvera15c@hotmail.com</ion-label>
+      </div>
+
+      <ion-item class="item-content" lines="none" detail="" (click)="onPage('/tabs/profile/credencial')">
+        <ion-icon slot="start" name="id-card-outline"></ion-icon>
+    
+        <ion-label class="lbl">Credencial Digital</ion-label>
+      </ion-item>
+
+      <ion-item class="item-content" lines="none" detail="" (click)="onPage('/tabs/profile/edit-profile')">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <ion-label class="lbl">Editar Perfil</ion-label>
+      </ion-item>
+
+      <!--<ion-item class="item-content" lines="none" detail="" (click)="onPage('payment-options')">
+        <ion-icon slot="start" name="card-outline"></ion-icon>
+        <ion-label class="lbl">Payment Option</ion-label>
+      </ion-item>-->
+
+      <ion-item class="item-content" lines="none" detail="" (click)="onPage('/tabs/profile/notifications')">
+        <ion-icon slot="start" name="notifications-outline"></ion-icon>
+        <ion-label class="lbl">Notificaciones</ion-label>
+      </ion-item>
+
+      <ion-item class="item-content" lines="none" detail="" (click)="onPage('/tabs/profile/security')">
+        <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-label class="lbl">Seguridad</ion-label>
+      </ion-item>
+
+     <!--  <ion-item class="item-content" lines="none" detail="" (click)="onPage('languages')">
+        <ion-icon slot="start" name="language-outline"></ion-icon>
+        <ion-label class="lbl">Language</ion-label>
+      </ion-item>
+
+      <ion-item class="item-content" lines="none" detail="">
+        <ion-icon slot="start" name="moon-outline"></ion-icon>
+        <ion-label class="lbl">Dark Mode</ion-label>
+      </ion-item>-->
+
+      <ion-item class="item-content" lines="none" detail="" (click)="onPage('/tabs/profile/terms')">
+        <ion-icon slot="start" name="document-lock-outline"></ion-icon>
+        <ion-label class="lbl">Terminos y Condiciones</ion-label>
+      </ion-item>
+
+    
+
+     
+
+      <br>
+      <ion-footer>
+        <div class="">
+          <ion-button expand="block"  (click)="onPage('login')">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            Cerrar Sesion
+          </ion-button>
+        </div>
+        <div class="app-version">
+          <ion-label>Versión 10.2.2</ion-label>
+        </div>
+      </ion-footer>
+    </ion-card>
+  </div>
+</ion-content>

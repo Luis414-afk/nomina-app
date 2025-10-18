@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mis Asistencias</ion-title>
+  </ion-toolbar>
+  <ion-toolbar mode="ios">
+    <ion-row class="online-course-segments">
+      <ion-col size="6">
+        <div
+          [class]="selected == 'completed' ? 'active-btn ion-activatable ripple-parent' : 'deactive-btn ion-activatable ripple-parent'"
+          (click)="changeSelected('completed')">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label class="lbl">Historial</ion-label>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div
+          [class]="selected == 'ongoing' ? 'active-btn ion-activatable ripple-parent' : 'deactive-btn ion-activatable ripple-parent'"
+          (click)="changeSelected('ongoing')">
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-label class="lbl">Dashboard</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ng-container *ngIf="selected === 'completed'">
+    <app-mi-asistencias></app-mi-asistencias>
+  </ng-container>
+  
+  <ng-container *ngIf="selected === 'ongoing'">
+    <app-mi-dashboard></app-mi-dashboard>
+  </ng-container>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100" (click)="onPage('tabs/menu-general/menu-asistencias/checador-digital')">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Checar Asistencia</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>

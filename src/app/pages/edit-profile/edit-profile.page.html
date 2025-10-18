@@ -1,0 +1,69 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="profile-screen">
+    <div class="edit-profile-content">
+      <div class="img-item">
+       
+        <img src="assets/images/avatar/2.jpg" alt="" class="img-tag">
+      
+      </div>
+    </div>
+
+  
+
+ 
+
+    <ion-item lines="none" class="item-content">
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <ion-input type="email" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="item-content">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="password" placeholder="Actual Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="item-content">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="password" placeholder="Nueva Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="item-content">
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input type="password" placeholder="Confirmar Cambio Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="item-content">
+      <ion-label class="ccode">{{ccode}}</ion-label>
+      <ion-input type="number" placeholder="(+91) 963 - 852 7896"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="item-content">
+      <ion-label class="lbl">Genero</ion-label>
+      <ion-select value="peperoni" placeholder="Gender">
+        <ion-select-option value="peperoni">Hombre</ion-select-option>
+        <ion-select-option value="hawaii">Mujer</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Actualizar</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

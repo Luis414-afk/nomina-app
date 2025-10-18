@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary" [style.--color]="'white'">
+    <ion-title>Detalle de solicitud</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ng-container *ngIf="item">
+    <ion-item>
+      <ion-label>
+        <h3>Fecha de creación:</h3>
+        <p>{{ item.fechaCreacion }}</p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>
+        <h3>Fechas solicitadas:</h3>
+        <p>{{ item.fechasSolicitadas }}</p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>
+        <h3>Días solicitados:</h3>
+        <p>{{ item.diasSolicitados }}</p>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>
+        <h3>Estado:</h3>
+        <p>
+          <ion-badge [color]="getBadgeColor(item.estatus)">
+            {{ item.estatusName }}
+          </ion-badge>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ng-container>
+  
+ 
+
+</ion-content>

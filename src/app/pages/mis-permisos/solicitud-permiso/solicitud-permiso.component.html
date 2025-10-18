@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Solicitar Permiso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding solicitud-screen">
+
+  
+  <!-- Fecha de creación -->
+  <ion-item lines="none" class="item-content">
+    <ion-icon slot="start" name="calendar-number-outline" color="primary"></ion-icon>
+    <ion-input type="text" [value]="fechaHoraActual" placeholder="Fecha de creación" readonly></ion-input>
+  </ion-item>
+
+  <!-- Fechas solicitadas -->
+  <ion-item lines="none" class="item-content" (click)="presentPopover()">
+    <ion-icon slot="start" name="calendar-outline" color="primary"></ion-icon>
+    <ion-label>
+      <h3 class="title">Fechas Elegidas</h3>
+      <p class="subtitle">{{ diasSeleccionados }}</p>
+    </ion-label>
+    <ion-icon slot="end" color="medium" name="open-outline"></ion-icon>
+  </ion-item>
+
+
+  <ion-item lines="none" class="item-content">
+    <ion-label class="lbl">PERMISO</ion-label>
+    <ion-select [(ngModel)]="selectedOption" placeholder="Seleccionar" okText="Aceptar" cancelText="Cancelar">
+      <ion-select-option *ngFor="let motivo of listMotivos" [value]="motivo.id">
+        {{ motivo.value }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+
+  <!-- Input para hora de entrada (visible si selecciona "Entrar Tarde") -->
+  <ion-item lines="none" class="item-content" *ngIf="selectedOption === 1" (click)="openPopover($event, 'entrada')">
+    <ion-icon slot="start" name="time-outline" color="primary"></ion-icon>
+    <ion-input readonly placeholder="Selecciona la hora de entrada" [(ngModel)]="horaEntrada"></ion-input>
+  </ion-item>
+  
+  <!-- Input para hora de salida (visible si selecciona "Para Salir") -->
+  <ion-item lines="none" class="item-content" *ngIf="selectedOption === 2" (click)="openPopover($event, 'salida')">
+    <ion-icon slot="start" name="time-outline" color="primary"></ion-icon>
+    <ion-input readonly placeholder="Selecciona la hora de salida" [(ngModel)]="horaSalida"></ion-input>
+  </ion-item>
+  
+  <!-- Input para hora de regreso (visible si selecciona "Para Salir") -->
+  <ion-item lines="none" class="item-content" *ngIf="selectedOption === 2" (click)="openPopover($event, 'regreso')">
+    <ion-icon slot="start" name="time-outline" color="primary"></ion-icon>
+    <ion-input readonly placeholder="Selecciona la hora de regreso" [(ngModel)]="horaRegreso"></ion-input>
+  </ion-item>
+
+
+  <ion-item lines="none" class="item-content">
+    <ion-label class="lbl">SUELDO</ion-label>
+    <ion-select [(ngModel)]="selectedOptionSueldo" placeholder="Seleccionar" okText="Aceptar" cancelText="Cancelar">
+      <ion-select-option *ngFor="let sueldo of listSueldo" [value]="sueldo.valueId">
+        {{ sueldo.value }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+ 
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100" (click)="enviarSolicitud()">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Enviar Solicitud</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

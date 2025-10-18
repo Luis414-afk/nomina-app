@@ -1,0 +1,31 @@
+<ion-list class="ion-margin">
+  <ion-item-group>
+    <ion-item-divider color="primary" style="text-align: center;">
+      <ion-label style="width: 100%; text-align: center;">Enero 2024</ion-label>
+    </ion-item-divider>
+    <ion-item button detail="false" *ngFor="let event of [1,2]">
+      <ion-label>
+        <h3 style="color: var(--ion-color-primary); font-size: 1.2rem; font-weight: 700;" >$ 10,488.00 MX</h3>
+        <p>Periodo De Pago:</p>
+        <p style="color: black; font-weight: 600;"><b>Inicio:</b> 2022-02-16 - <b>Fin:</b> 2021-01-31 </p>
+      </ion-label>
+      <ion-icon name="newspaper" slot="end" size="large" color="primary" (click)="openUrl('https://formacion-enaproc.cenapred.unam.mx/formulario/capacitacion/media/breezingforms/uploads/361a0cff74d243df499293a770609d8e_RECIBO.pdf')"></ion-icon>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="primary" style="text-align: center;">
+      <ion-label style="width: 100%; text-align: center;">Febrero 2024</ion-label>
+    </ion-item-divider>
+    <ion-item button detail="false" *ngFor="let event of [1,2,3,4]">
+      <ion-label>
+        <h3 style="color: var(--ion-color-primary); font-size: 1.2rem; font-weight: 700;" >$ 10,488.00 MX</h3>
+        <p>Periodo De Pago:</p>
+        <p style="color: black; font-weight: 600;"><b>Inicio:</b> 2022-02-16 - <b>Fin:</b> 2021-01-31 </p>
+      </ion-label>
+      <ion-icon name="newspaper" slot="end" size="large" color="primary" (click)="openUrl('https://formacion-enaproc.cenapred.unam.mx/formulario/capacitacion/media/breezingforms/uploads/361a0cff74d243df499293a770609d8e_RECIBO.pdf')"></ion-icon>
+    </ion-item>
+  </ion-item-group>
+</ion-list>
+
+
+

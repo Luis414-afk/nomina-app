@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="primary" [style.--color]="'white'">
+    <ion-title>Detalle del Empleado</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item class="ion-activatable ripple-parent">
+    <ion-label>
+      <h3>Nombre:</h3>
+      <p>Juan Pérez</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activatable ripple-parent">
+    <ion-label>
+      <h3>Email:</h3>
+      <p>juan.perez@example.com</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item class="ion-activatable ripple-parent">
+    <ion-label>
+      <h3>Teléfono:</h3>
+      <p>+52 1234567890</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-col size="6" size-md="4" class="ion-text-center">
+        <ion-button expand="block" color="primary" (click)="enviarCorreo()">
+          📧 Enviar correo
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="6" size-md="4" class="ion-text-center">
+        <ion-button expand="block" color="success" (click)="llamarTelefono()">
+          📞 Llamar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

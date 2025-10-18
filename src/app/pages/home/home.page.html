@@ -1,0 +1,70 @@
+<!--
+  Authors : initappz (Rahul Jograna)
+  Website : https://initappz.com/
+  App Name : E-Learning-1 This App Template Source code is licensed as per the
+  terms found in the Website https://initappz.com/license
+  Copyright and Good Faith Purchasers © 2023-present initappz.
+-->
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+    <div class="home-screen-toolbar">
+     
+      <div class="name-content">
+   
+        <ion-label class="title">Hola, Jesus Olvera Camarillo</ion-label>
+        <ion-label class="sub-title">Desarrollador Netsuit/Mobil</ion-label>
+      
+      </div>
+      <div class="end-btn ion-activatable ripple-parent" (click)="onPage('/tabs/home/notifications')">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="notifications-outline" color="secondary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="home-screen">
+    <swiper-container slides-per-view="1" speed="3000"   [autoplay]="true" [loop]="true" css-mode="true" (slidechange)="slideChanged($event)">
+      <swiper-slide *ngFor="let item of noticias; let j = index;">
+        <ion-card mode="ios" class="offer-list">
+          <ion-label class="title"> {{item.titulo}} </ion-label>
+          <ion-label class="name"> {{item.cuerpo}} </ion-label>
+    
+          <div class="progress">
+            <div *ngFor="let item of noticias; let i = index;" [class]="i == index ? 'active' : 'deactive'"></div>
+          </div>
+        </ion-card>
+      </swiper-slide>
+    </swiper-container>
+
+ 
+
+    <div class="main-title">
+      <ion-label class="title">Blog Interno Noticias</ion-label>
+      <ion-label class="btn" >General <ion-icon name="chevron-forward-outline"
+          color="primary"></ion-icon> </ion-label>
+    </div>
+
+    
+    <ion-card mode="ios" class="course-content-slide"
+    (click)="onCourseDetails(item.link_name,item.image_url,courseContent)" *ngFor="let item of coursesList;let i = index;">
+    <div class="course-cover-image" [ngStyle]="{'background-image': 'url('+item.image_url+')'}"></div>
+    <div class="name-content">
+      <div class="top-content">
+        <ion-label class="course-type"> {{courseContent}} </ion-label>
+        <ion-icon name="newspaper-outline" color="secondary"></ion-icon>
+      
+   
+      </div>
+      <ion-label class="name">
+        {{ (item.link_name.length>50)? (item.link_name | slice:0:50)+'..':(item.link_name) }}
+      </ion-label>
+    </div>
+  </ion-card>
+
+
+  
+  </div>
+</ion-content>
+

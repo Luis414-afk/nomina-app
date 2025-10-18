@@ -1,0 +1,14 @@
+
+
+.chart-container {
+  width: 100%;       /* ocupa todo el ancho del card */
+  height: 600px;     /* altura grande para crecer hacia abajo */
+  max-width: 100%;   /* no se pase horizontalmente */
+  background-color: white;
+}
+
+canvas {
+  padding: 16px;
+  width: 100% !important;   /* ancho total */
+  height: 100% !important;  /* ocupa toda la altura del contenedor */
+}

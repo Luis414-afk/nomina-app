@@ -1,0 +1,94 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+          <ion-back-button [text]="'Atrás'" [icon]="'arrow-back-outline'"></ion-back-button>
+      </ion-buttons>
+        
+    <ion-title>Mis Vacaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content >
+
+  <div class="resumen-card">
+  
+    <!-- En proceso -->
+    <div class="resumen-item">
+      <ion-icon name="time-outline"></ion-icon>
+      <div>
+        <p class="label">Dipinibles</p>
+        <p class="valor">10</p>
+      </div>
+    </div>
+
+    <div class="resumen-item">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <div>
+        <p class="label">Usados</p>
+        <p class="valor">32</p>
+      </div>
+    </div>
+
+    <!-- Cancelados -->
+    <div class="resumen-item">
+      <ion-icon name="close-circle-outline"></ion-icon>
+      <div>
+        <p class="label">Cancelados</p>
+        <p class="valor">23</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="listado-general">
+    <div class="call-chat-card ion-activatable ripple-parent" *ngFor="let item of userList; let i = index;">
+      <ion-row class="call-chat-content">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-col size="2">
+         
+          <ion-icon class="mentor-cover-image" name="checkmark-circle-outline" *ngIf="item.estatus == 1" [color]="getBadgeColor(item.estatus)"></ion-icon>
+          <ion-icon class="mentor-cover-image" name="help-circle-outline" *ngIf="item.estatus == 2" [color]="getBadgeColor(item.estatus)"></ion-icon>
+          <ion-icon class="mentor-cover-image"  name="close-circle-outline"  *ngIf="item.estatus == 3" [color]="getBadgeColor(item.estatus)"></ion-icon>
+ 
+          
+        </ion-col>
+        <ion-col size="8">
+          <div class="name-content">
+            <ion-label class="name"> 
+              <ion-badge [color]="getBadgeColor(item.estatus)">
+                Estatus: {{ item.estatusName }}
+              </ion-badge>
+            </ion-label>
+            <div class="more-data">
+              <ion-icon name="timer-outline" [color]="getBadgeColor(item.estatus)"></ion-icon>
+              <ion-label class="lbl">{{ item.hora }}</ion-label>
+              <div class="line"></div>
+              <ion-icon name="calendar-outline" [color]="getBadgeColor(item.estatus)"></ion-icon>
+              <ion-label class="lbl">{{ item.fecha }}</ion-label>
+              
+            </div>
+          </div>
+        </ion-col>
+        <ion-col size="2">
+          <div class="end-btn">
+            <ion-icon name="eye-outline" color="primary" class="call-btn" (click)="openDetailPopover(item)"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="next-btn-login ion-activatable ripple-parent" [style.width.%]="100" (click)="onPage('/tabs/menu-general/mis-vacaciones/solicitar-vacaciones')">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-label class="lbl">Solicitar vacación</ion-label>
+      <div class="btn">
+        <ion-icon name="arrow-forward-outline" color="primary"></ion-icon>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-footer>
